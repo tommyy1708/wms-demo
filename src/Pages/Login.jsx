@@ -14,7 +14,7 @@ function Login() {
   const onSubmit = async (values) => {
     setShowSpin(true);
     try {
-      console.log('values', values);
+      console.log('values', process.env.REACT_APP_SERVER_URL);
       const loginResponse = await LoginApi(values);
     //  const response = await fetch(
     //    `http://${process.env.REACT_APP_SERVER_URL}/supplier-login`,
