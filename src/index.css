@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=VT328&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 24rem;
+  /* Google Font */
+  font-family: 'Poppins';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+* {
+  text-align: inherit;
+  text-align-last: auto;
+  text-decoration: none;
+  text-decoration-color: inherit;
+  text-decoration-line: none;
+  text-decoration-style: solid;
+  text-indent: 0;
+  text-shadow: none;
+  text-transform: none;
+  color: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+li {
+  list-style: none;
+  list-style-image: none;
+  list-style-position: outside;
+  list-style-type: none;
+}
+
+button {
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+/* start comment css variables and components UI */
+.dark {
+  background-color: rgb(16, 28, 45);
+}
+
+.loading {
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  text-align: center;
+  background-color: rgba(50, 50, 50, 0.1);
+}
+
+.marginCenter {
+  margin: auto;
+}
+
+/* end comment css variables */
+
+/* start Home page */
+.headerFrame {
+  height: 10vh;
+  padding: 10rem 20rem;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 99999;
+}
+
+.header {
+  line-height: 60rem;
+}
+
+.headerLeft {
+  font-weight: bold;
+}
+
+.headerRight {
+
+}
+
+.headerRight button {
+  background-color: #f44336;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.displayWindow {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  justify-content: center;
+  margin-bottom: 30vh; /* Adjust based on footer height */
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #333;
+  color: white;
+}
+
+.footerContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 10px;
+}
+
+.footerNavMenu {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.footerNavMenu a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 20px;
+  text-decoration: none;
+  color: white;
+}
+
+.footerNavMenu a p {
+  margin: 0;
+}
+
+.footerCopyright {
+  text-align: center;
+  font-size: 10rem;
+  color: #fff;
+}
+
+/* end Home page */
+
+/* Start Login page */
+#login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 50rem;
+  overflow: hidden;
+}
+.login_announcement {
+  margin: 25rem auto;
+  text-align: center;
+  font-size: 50rem;
+}
+
+.login_box {
+  width: 300px;
+  text-align: center;
+  padding: 50rem;
+  border: 1px solid #ddd;
+  box-shadow: 12px 12px 6px 1px rgba(255, 0, 119, 0.109);
+}
+
+.login_banner {
+  display: flex;
+  padding: 50rem;
+}
+/* End Login page */
+
+/* Start Profile page */
+.profileFrame {
+  padding: 50rem;
+}
+/* End Profile page */
+
+/* Start Checkout page*/
+.checkout-buttonsFrame {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.checkout-button {
+  margin: 50rem 50rem;
+}
+/* End Checkout page*/
+
+/* admin page */
+.adminWindow {
+  position: fixed;
+  top: 50rem;
+  left: 0;
+  bottom: 180rem;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  padding: 20rem 0;
+}
+/* end admin page */
+
+/* NoticeEditor.css */
+
+.notice-editor-container {
+  padding: 20px;
+  width: 600px;
+  margin: auto;
+  border-radius: 5px;
+}
+
+/* Media query for small screens */
+@media screen and (max-width: 600px) {
+  .notice-editor-container {
+    max-width: 100%;
+  }
+}
+
+/* Admin window */
+.admin-window {
+  width: 100%;
+  height: 100%;
+}
+
+.adminSubWindow {
+  width: 300rem;
+  padding: 24rem;
+}
+
+/* Admin-products Category UI */
+.admin-category-list-imageFrame {
+  width: 102rem;
+  height: 102rem;
+  margin-inline-end: 8rem;
+  margin-bottom: 8rem;
+  border-radius: 8rem;
+  text-align: center;
+  transition: border-color 0.3s;
+}
+
+.checkout-button-frame{
+  display: flex;
+  justify-content: space-around;
+}
+
+/* Client-Checkout-Page */
+.buttonsFrame {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}

@@ -1,0 +1,30 @@
+.listingFrame{
+  /* position: fixed; */
+  /* top: 55rem; */
+  /* left: 0; */
+  overflow: scroll;
+  /* bottom: 160rem; */
+}
+.buttonsFrame {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.listingHeader {
+  border-bottom: 1px solid #ddd;
+  padding: 10rem;
+}
+
+.listingPrice::before {
+  content: '$';
+}
+
+.amount{
+  color: red;
+}
+
+.tableHeader{
+  display: flex;
+  justify-content: space-between;
+}

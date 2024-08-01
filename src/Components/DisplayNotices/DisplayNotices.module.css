@@ -1,0 +1,20 @@
+.noticeDisplay {
+  position: relative;
+  overflow: hidden;
+}
+
+.animation {
+  position: relative;
+  animation: fadeAnimation 2s ease-in-out;
+}
+
+@keyframes fadeAnimation {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+}

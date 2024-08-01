@@ -1,0 +1,22 @@
+.cardsFrame{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  z-index: -999;
+  width: 100%;
+}
+
+.categoryCards{
+
+}
+
+.cards{
+  border-radius: 20rem;
+  margin: 50rem 10rem 0 5rem;
+  border: 9rem solid pink;
+}
+
+.productsTitle{
+  /* text-align: center; */
+}
