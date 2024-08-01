@@ -15,19 +15,19 @@ function Login() {
     setShowSpin(true);
     try {
       console.log('values', values);
-      // const loginResponse = await LoginApi(values);
-     const response = await fetch(
-       `http://${process.env.REACT_APP_SERVER_URL}/supplier-login`,
-       {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(values),
-       }
-      );
+      const loginResponse = await LoginApi(values);
+    //  const response = await fetch(
+    //    `http://${process.env.REACT_APP_SERVER_URL}/supplier-login`,
+    //    {
+    //     method: 'POST',
+    //     headers: {
+    //       'Content-Type': 'application/json',
+    //     },
+    //     body: JSON.stringify(values),
+    //    }
+    //   );
 
-      const loginResponse = await response.json();
+    //   const loginResponse = await response.json();
 
       if (loginResponse.errCode !== 0) {
         setTimeout(() => {
