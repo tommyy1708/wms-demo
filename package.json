@@ -1,6 +1,5 @@
 {
   "name": "hair-supplier",
-  "homepage": "https://hairbuy4u.com/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
