@@ -4,7 +4,7 @@ import styles from './Category.module.css';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { GetCategoryApi } from '../../request/api';
 const Category = () => {
-  const { Meta } = Card;
+
   const [aCategory, setACategory] = useState(false);
   const [loading, setLoading] = useState(true);
   const location = useLocation();
@@ -53,7 +53,7 @@ const Category = () => {
                   />
                 }
               >
-                {/* <Meta className={`${styles.productsTitle}`} title={e.categoryName} /> */}
+
               </Card>
             </div>
           ))

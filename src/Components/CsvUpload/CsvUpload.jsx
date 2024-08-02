@@ -46,24 +46,6 @@ const CsvUpload = () => {
     setFileList(newFileList);
   };
 
-// const handleChange = (info) => {
-//   if (info.file.status === 'uploading') {
-//     setIsDisable(true);
-//     return;
-//   }
-//   if (info.file.status === 'done' && info.file.response) {
-//     // Assuming the server response includes the file URL under `url` key
-//     setFileUrl(info.file.response.url);
-//     setIsDisable(false);
-//     message.success(`${info.file.name} file uploaded successfully`);
-//   } else if (info.file.status === 'error') {
-//     message.error(`${info.file.name} file upload failed.`);
-//     setIsDisable(true);
-//   }
-
-  // Update the fileList state to include only the last uploaded file
-//   setFileList(info.fileList.slice(-1));
-// };
 
 
   const props = {
@@ -71,12 +53,6 @@ const CsvUpload = () => {
     onChange: handleChange,
     multiple: false,
   };
-  // const props = {
-  //   action: `${process.env.REACT_APP_SERVER_URL}/upload-csv`,
-  //   onChange: handleChange,
-  //   beforeUpload: beforeUpload,
-  //   multiple: false,
-  // };
 
 
   return (
@@ -88,7 +64,9 @@ const CsvUpload = () => {
       }}
     >
       <p>Only .csv file acceptable</p>
+      <p style={{color:'red',fontSize:'10rem'}}>(Demo version disabled upload function)</p>
       <Upload
+        disabled
         maxCount={1}
         listType="text"
         {...props}

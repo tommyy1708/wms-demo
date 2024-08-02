@@ -47,6 +47,7 @@ const ClientList = () => {
   const toggleAdminStatus = async (userInfo) => {
     setLoading(true);
     const loginUserId = parseInt(localStorage.getItem('userId'));
+
     if (userInfo.id === loginUserId) {
       notification.error({
         message: "You can't change yourself value",
@@ -205,7 +206,7 @@ const ClientList = () => {
             okText="Yes"
             cancelText="No"
           >
-            <Button danger>Delete</Button>
+            <Button danger disabled>Delete</Button>
           </Popconfirm>
         </>
       ),

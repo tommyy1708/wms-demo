@@ -138,9 +138,13 @@ const AdminBanner = () => {
   return (
     <div>
       <h3>Upload picture here to display on the login page</h3>
+      <p style={{ color: 'red', fontSize: '10rem' }}>
+        (Demo version disabled upload and add new function)
+      </p>
       <Form onFinish={handleSubmit} layout="horizontal">
         <Form.Item>
           <Upload
+            disabled
             name="banner"
             className="banner-uploader"
             listType="picture-card"
@@ -154,7 +158,7 @@ const AdminBanner = () => {
           </Upload>
         </Form.Item>
         <Form.Item>
-          <Button type="primary" htmlType="submit">
+          <Button type="primary" htmlType="submit" disabled>
             Submit
           </Button>
         </Form.Item>

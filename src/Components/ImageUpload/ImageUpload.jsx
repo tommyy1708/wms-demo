@@ -78,6 +78,7 @@ const uploadButton = (
   return (
     <>
       <Upload
+        disabled
         name="avatar"
         className="avatar-uploader"
         listType="picture-card"

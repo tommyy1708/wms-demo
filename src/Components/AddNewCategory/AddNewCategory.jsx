@@ -145,6 +145,9 @@ const AddNewCategory = () => {
 
   return (
     <div className="adminSubWindow">
+      <p style={{ color: 'red', fontSize: '10rem' }}>
+        (Demo version disabled upload function)
+      </p>
       <Form form={form} onFinish={handleSubmit} layout="horizontal">
         <Form.Item
           label="Category Name"
@@ -169,6 +172,7 @@ const AddNewCategory = () => {
           ]}
         >
           <Upload
+            disabled
             name="avatar"
             className="avatar-uploader"
             listType="picture-card"
@@ -182,8 +186,8 @@ const AddNewCategory = () => {
           </Upload>
         </Form.Item>
         <Form.Item>
-          <Button type="primary" htmlType="submit">
-            Add Product
+          <Button type="primary" htmlType="submit" disabled>
+            Add Category
           </Button>
         </Form.Item>
       </Form>

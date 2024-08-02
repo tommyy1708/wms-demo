@@ -73,7 +73,7 @@ const AdminCategory = () => {
             okText="Yes"
             cancelText="No"
           >
-            <Button danger>Delete</Button>
+            <Button danger disabled>Delete</Button>
           </Popconfirm>
         </>
       ),

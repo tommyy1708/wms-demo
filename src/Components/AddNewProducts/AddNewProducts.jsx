@@ -44,6 +44,9 @@ const AddNewProducts = () => {
 
   return (
     <div className="adminSubWindow">
+      <p style={{ color: 'red', fontSize: '10rem' }}>
+        (Demo version disabled upload or add new function)
+      </p>
       <Form form={form} onFinish={handleSubmit} layout="horizontal">
         <Form.Item
           label="Item Code"
@@ -95,13 +98,14 @@ const AddNewProducts = () => {
             style={{
               width: 120,
             }}
-            options={
-              categoryList.map(item => ({value:item.categoryName, label:item.categoryName}))
-            }
+            options={categoryList.map((item) => ({
+              value: item.categoryName,
+              label: item.categoryName,
+            }))}
           />
         </Form.Item>
         <Form.Item>
-          <Button type="primary" htmlType="submit">
+          <Button type="primary" htmlType="submit" disabled>
             Add Product
           </Button>
         </Form.Item>
