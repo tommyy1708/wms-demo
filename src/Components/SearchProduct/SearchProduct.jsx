@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Input,
   Table,
@@ -7,7 +7,11 @@ import {
   Popconfirm,
   message,
 } from 'antd';
-import { GetProduct, ProductDelete } from '../../request/api';
+import {
+  GetProduct,
+  ProductDelete,
+  GetAllProduct,
+} from '../../request/api';
 import {Link} from 'react-router-dom';
 
 const SearchProduct = () => {
@@ -48,6 +52,18 @@ const SearchProduct = () => {
     console.log('clicked');
 
   }
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await GetAllProduct();
+      if (response.errCode !== 0) {
+        return message.error(response.message);
+      } else {
+        setSearchData(response.data);
+      }
+    }
+    fetchData();
+  }, []);
 
   const columns = [
     {

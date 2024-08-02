@@ -4,7 +4,6 @@ import {
   Table,
   Button,
   message,
-  Tooltip,
 } from 'antd';
 import { GetCategoryList } from '../../request/api';
 import {
@@ -132,20 +131,6 @@ const Listing = () => {
           title={() => (
             <div className={styles.tableHeader}>
               <Button onClick={goBack}>Back</Button>
-              {/* <Tooltip
-                title="Click to see more products pictures"
-                trigger="click"
-                placement="right"
-                open
-              >
-                <a
-                  href="https://hairmazeusa.com/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <Button type="primary">Go!</Button>
-                </a>
-              </Tooltip> */}
             </div>
           )}
           footer={() => <Button onClick={goBack}>Back</Button>}

@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router';
 import SpinOverLay from '../Components/SpinOverLay/SpinOverLay';
 import { jwtDecode } from 'jwt-decode';
 import { LoginApi } from '../request/api';
-import DisplayBanner from '../Components/DIsplayBanner/DisplayBanner';
 
 function Login() {
   const navigate = useNavigate();
@@ -109,7 +108,11 @@ function Login() {
         <p>by {process.env.REACT_APP_COMPANY_NAME}</p>
       </div>
       <div className="login_banner">
-        <DisplayBanner />
+        <span >
+          Admin: admin@demo.com <br />
+          Client: client@demo.com <br />
+          Default password: 12345678
+        </span>
       </div>
     </div>
   );

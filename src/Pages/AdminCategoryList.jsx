@@ -3,16 +3,10 @@ import { Link, useParams, useNavigate } from 'react-router-dom';
 import { GetCategoryList } from '../request/api';
 import { useEffect, useState } from 'react';
 import {
-  InputNumber,
-  Form,
   Button,
-  Input,
-  Popconfirm,
   Table,
   message,
-  Typography,
   notification,
-  Pagination,
 } from 'antd';
 export default function AdminCategoryList() {
   notification.config({

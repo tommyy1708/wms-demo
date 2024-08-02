@@ -172,7 +172,10 @@ footer {
 
 .login_banner {
   display: flex;
-  padding: 50rem;
+  padding: 10rem;
+  font-size:20rem;
+  border-radius: 10px;
+  background-color: #f44336;
 }
 /* End Login page */
 

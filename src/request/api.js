@@ -111,3 +111,5 @@ export const VerifyToken = () => request.get(`/supplier-verify-token`);
 
 
 export const TestApi = (params) => request.get(`/test-api`, { params });
+
+export const GetAllProduct = () => request.get(`/supplier-all-product`);
