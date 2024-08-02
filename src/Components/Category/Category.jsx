@@ -41,6 +41,7 @@ const Category = () => {
               onClick={() => navigate(`/category/${e.categoryName}`)}
             >
               <Card
+                title={e.categoryName}
                 className={`${styles.cards}`}
                 hoverable
                 loading={loading}
