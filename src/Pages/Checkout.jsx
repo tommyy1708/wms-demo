@@ -149,21 +149,6 @@ const Checkout = () => {
         </span>
       ),
     },
-    // {
-    //   title: ' ',
-    //   key: 'add',
-    //   width: '10%',
-    //   align: 'center',
-    //   colSpan: 0,
-    //   render: (_, record) => (
-    //     <span>
-    //       <PlusCircleTwoTone
-    //         style={{ fontSize: '55rem', color: '#08c' }}
-    //         onClick={() => ctx.addItemToCart(record)}
-    //       />
-    //     </span>
-    //   ),
-    // },
   ];
 
 

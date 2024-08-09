@@ -108,11 +108,15 @@ function Login() {
         <p>by {process.env.REACT_APP_COMPANY_NAME}</p>
       </div>
       <div className="login_banner">
-        <span >
-          Admin: admin@demo.com <br />
-          Client: client@demo.com <br />
-          Default password: 12345678
-        </span>
+        <p>
+          <strong>Admin:</strong> admin@demo.com
+        </p>
+        <p>
+          <strong>Client:</strong>client@demo.com
+        </p>
+        <p>
+          <strong>Default password:</strong>12345678
+        </p>
       </div>
     </div>
   );

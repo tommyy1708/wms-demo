@@ -171,11 +171,12 @@ footer {
 }
 
 .login_banner {
-  display: flex;
+  width: 380px;
+  text-align: center;
   padding: 10rem;
   font-size:20rem;
   border-radius: 10px;
-  background-color: #f44336;
+  background-color: rgba(255, 0, 119, 0.109);
 }
 /* End Login page */
 
