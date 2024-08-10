@@ -9,19 +9,19 @@ const ForgetPassword = () => {
   const [showSpin, setShowSpin] = useState(false);
   const [isDisabled, setIsDisabled] = useState(false);
   const sendVerify = async (values) => {
-    setIsDisabled(true);
-    const response = await SendVerifyCode(values);
-    if (response.errCode !== 0) {
-      message.error(response.message);
-      setTimeout(() => {
-        setIsDisabled(false);
-      }, [2500]);
-      return;
-    } else {
-      message.success(response.message);
-      setTimeout(() => {
-        setIsDisabled(false);
-      }, [60000]);
+    // setIsDisabled(true);
+    // const response = await SendVerifyCode(values);
+    // if (response.errCode !== 0) {
+    //   message.error(response.message);
+    //   setTimeout(() => {
+    //     setIsDisabled(false);
+    //   }, [2500]);
+    //   return;
+    // } else {
+      message.success('Demo version, new password send successfully');
+      // setTimeout(() => {
+      //   setIsDisabled(false);
+      // }, [60000]);
       return;
     }
   };
