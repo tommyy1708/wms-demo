@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Form, Input, Button, message, Row, Col } from 'antd';
-import { SendVerifyCode } from '../request/api';
 import SpinOverLay from '../Components/SpinOverLay/SpinOverLay';
 import { useNavigate } from 'react-router';
 const ForgetPassword = () => {
@@ -23,7 +22,7 @@ const ForgetPassword = () => {
       //   setIsDisabled(false);
       // }, [60000]);
       return;
-    }
+    // }
   };
   return (
     <div className="login_box marginCenter">
