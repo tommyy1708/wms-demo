@@ -20,6 +20,7 @@ function Login() {
         setTimeout(() => {
           setShowSpin(false);
         }, [2500]);
+        message.error('Invalid email or password');
         return message.info(loginResponse.message);
       } else {
         // userRol to determine RBAC
