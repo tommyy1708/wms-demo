@@ -56,7 +56,6 @@ export default function ReadMessage() {
 
       try {
         const response = await GetMessages(params);
-        console.log(response.data);
         if (response.errCode === 0) {
           // message.success(response.message);
           setMessages(response.data);
