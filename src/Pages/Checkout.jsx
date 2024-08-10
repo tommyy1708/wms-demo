@@ -188,7 +188,7 @@ const Checkout = () => {
                   </Table.Summary.Cell>
                   <Table.Summary.Cell index={1} colSpan={6}>
                     <Text type="danger">
-                      $ {ctx.cartData.subtotal}
+                      $ {parseFloat(ctx.cartData.subtotal).toFixed(2)}
                     </Text>
                   </Table.Summary.Cell>
                 </Table.Summary.Row>
