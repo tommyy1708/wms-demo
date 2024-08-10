@@ -13,7 +13,6 @@ function Login() {
   const onSubmit = async (values) => {
     setShowSpin(true);
     try {
-      console.log('values', process.env.REACT_APP_SERVER_URL);
 
       const loginResponse = await LoginApi(values);
 
