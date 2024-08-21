@@ -23,6 +23,10 @@ import AdminCategoryList from './Pages/AdminCategoryList';
 import Message from './Pages/Message';
 import AdminMessages from './Pages/AdminMessages';
 import { message } from 'antd';
+import CategoryEdit from './Pages/CategoryEdit';
+import TermsOfService from './Pages/TermsOfService';
+import PrivacyPolicy from './Pages/PrivacyPolicy';
+import Support from './Pages/Support';
 
 function App() {
   const oNmber = () => {
@@ -143,7 +147,6 @@ function App() {
     });
   };
 
-
   return (
     <Router>
       <CheckOutContent.Provider
@@ -157,11 +160,11 @@ function App() {
           subItemToCart,
         }}
       >
-      <Routes>
-        <Route
-          path="/*"
-          element={
-            <Layout>
+        <Routes>
+          <Route
+            path="/*"
+            element={
+              <Layout>
                 <Routes>
                   <Route path="home" element={<Home />} />
                   <Route path="category/:id" element={<Listing />} />
@@ -191,17 +194,30 @@ function App() {
                     element={<ProductEdit />}
                   />
                   <Route
+                    path="admin/products/category-edit/:id"
+                    element={<CategoryEdit />}
+                  />
+                  <Route
                     path="/admin/edit-category-list/:id"
                     element={<AdminCategoryList />}
                   />
                 </Routes>
-            </Layout>
-          }
+              </Layout>
+            }
           />
-        <Route index element={<Login />} />
-        <Route path="/forget-password" element={<ForgetPassword />} />
-      </Routes>
-        </CheckOutContent.Provider>
+          <Route index element={<Login />} />
+          <Route
+            path="/forget-password"
+            element={<ForgetPassword />}
+          />
+          <Route
+            path="/terms-of-service"
+            element={<TermsOfService />}
+          />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/support" element={<Support />} />
+        </Routes>
+      </CheckOutContent.Provider>
     </Router>
   );
 }

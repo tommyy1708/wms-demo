@@ -111,14 +111,9 @@ const Profile = () => {
           <Form.Item label="Shipping Address" name="shipping_address">
             <Input placeholder={ctx.userInfo.shipping_address} />
           </Form.Item>
-          <Form.Item
-            wrapperCol={{
-              offset: 8,
-              span: 16,
-            }}
-          >
+          <Form.Item>
             <Button type="primary" htmlType="submit">
-              Submit
+              Update
             </Button>
           </Form.Item>
         </Form>

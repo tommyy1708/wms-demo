@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import {
   Input,
   Table,
@@ -7,12 +7,8 @@ import {
   Popconfirm,
   message,
 } from 'antd';
-import {
-  GetProduct,
-  ProductDelete,
-  GetAllProduct,
-} from '../../request/api';
-import {Link} from 'react-router-dom';
+import { GetProduct, ProductDelete } from '../../request/api';
+import { Link } from 'react-router-dom';
 
 const SearchProduct = () => {
   notification.config({
@@ -39,7 +35,7 @@ const SearchProduct = () => {
         // eslint-disable-next-line
         const response = await GetProduct(data);
         if (response.data.length < 1) {
-          let msg = `Product ${data.keyWord} not found in your database`
+          let msg = `Product ${data.keyWord} not found in your database`;
           return message.info(msg);
         }
         setSearchData(response.data);
@@ -50,20 +46,7 @@ const SearchProduct = () => {
   //write logic to edit product once clicked it should take to edit page
   const editProduct = () => {
     console.log('clicked');
-
-  }
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const response = await GetAllProduct();
-      if (response.errCode !== 0) {
-        return message.error(response.message);
-      } else {
-        setSearchData(response.data);
-      }
-    }
-    fetchData();
-  }, []);
+  };
 
   const columns = [
     {

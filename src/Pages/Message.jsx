@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-import { Menu} from 'antd';
+import { Menu } from 'antd';
 import {
   PlusSquareOutlined,
   SearchOutlined,
 } from '@ant-design/icons';
 import ReadMessage from '../Components/ReadMessage/ReadMessage';
 import SendMessage from '../Components/SendMessage/SendMessage';
-
 
 const SendMessageForm = () => {
   const [current, setCurrent] = useState('0');
@@ -24,11 +23,7 @@ const SendMessageForm = () => {
     },
   ];
 
-   const componentsList = [
-     <ReadMessage/>,
-     <SendMessage/>
-   ];
-
+  const componentsList = [<ReadMessage />, <SendMessage />];
 
   const getComponentByKey = (key) => {
     const index = items.findIndex((item) => item.key === key);
@@ -36,9 +31,9 @@ const SendMessageForm = () => {
     return componentsList[index];
   };
 
-    const onClick = (e) => {
-      setCurrent(e.key);
-    };
+  const onClick = (e) => {
+    setCurrent(e.key);
+  };
 
   return (
     <div className="admin-window">

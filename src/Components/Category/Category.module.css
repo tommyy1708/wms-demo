@@ -1,22 +1,53 @@
-.cardsFrame{
+.cardsFrame {
   display: flex;
   align-items: center;
   justify-content: space-around;
   flex-wrap: wrap;
-  z-index: -999;
+  z-index: -1;
   width: 100%;
 }
 
-.categoryCards{
-
+.categoryCards {
+  width: 100%;
+  margin-bottom: 1rem; /* Space between cards */
 }
 
-.cards{
-  border-radius: 20rem;
-  margin: 50rem 10rem 0 5rem;
-  border: 9rem solid pink;
+.cards {
+  overflow: hidden;
+  border-radius: 1.25rem; /* Equivalent to 20px */
+  margin: 1.125rem 0.625rem 0 0.3125rem; /* Equivalent to 50px 10px 0 5px */
+  border: 0.2625rem solid pink; /* Equivalent to 9px */
+  transition: transform 0.3s, box-shadow 0.3s; /* Add a smooth transition for hover effects */
 }
 
-.productsTitle{
-  /* text-align: center; */
+.cards:hover {
+  transform: scale(1.05); /* Slightly enlarge the card on hover */
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1); /* Equivalent to 8px 16px, adds shadow on hover */
+}
+
+@media (max-width: 767px) {
+  .categoryCards {
+    width: 48%; /* Two columns on small screens */
+    margin: 1%; /* Small margin to separate the columns */
+  }
+}
+
+@media (min-width: 768px) {
+  .categoryCards {
+    width: 48%; /* Each card takes up nearly half the width on medium screens */
+  }
+}
+
+@media (min-width: 1024px) {
+  .cardsFrame {
+    padding: 2rem; /* Equivalent to 32px, adds padding for larger screens */
+  }
+
+  .categoryCards {
+    width: 30%; /* Each card takes up less space on very large screens */
+  }
+
+  .cards {
+    margin: 2rem 1rem; /* More spacing on larger screens */
+  }
 }

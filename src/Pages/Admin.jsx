@@ -101,6 +101,7 @@ const Admin = () => {
         fetchCategoryList();
       }, 2000);
     }
+
   };
 
   useEffect(() => {

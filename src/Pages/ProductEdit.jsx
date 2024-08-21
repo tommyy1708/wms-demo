@@ -16,8 +16,9 @@ export default function ProductEdit() {
   const [showSpin, setShowSpin] = useState(true);
   const navigate = useNavigate();
 
-  const goBack = () => { navigate(-1);}
-
+  const goBack = () => {
+    navigate(-1);
+  };
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -46,10 +47,9 @@ export default function ProductEdit() {
     fetchProduct();
   }, [id]);
 
-
-    const handleFieldChange = (changedValues) => {
-      setChangedFields({ ...changedFields, ...changedValues });
-    };
+  const handleFieldChange = (changedValues) => {
+    setChangedFields({ ...changedFields, ...changedValues });
+  };
 
   const onFinishFailed = (errorInfo) => {
     const errorMessage = errorInfo.errorFields[0].errors[0];
@@ -63,7 +63,7 @@ export default function ProductEdit() {
     }
     let data = {
       item_code: product.item_code,
-      ...changedFields
+      ...changedFields,
     };
     const response = await ProductUpdate(data);
 
@@ -75,7 +75,6 @@ export default function ProductEdit() {
     setTimeout(() => {
       navigate(-1);
     }, 2000);
-
   };
 
   return product.item_code ? (
@@ -119,9 +118,7 @@ export default function ProductEdit() {
           </Select>
         </Form.Item>
         <Form.Item>
-          <Button onClick={goBack}>
-            Cancel
-          </Button>
+          <Button onClick={goBack}>Cancel</Button>
           <Button type="primary" htmlType="submit">
             Update
           </Button>

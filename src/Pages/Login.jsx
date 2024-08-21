@@ -4,23 +4,20 @@ import { useNavigate } from 'react-router';
 import SpinOverLay from '../Components/SpinOverLay/SpinOverLay';
 import { jwtDecode } from 'jwt-decode';
 import { LoginApi } from '../request/api';
-
+import DisplayBanner from '../Components/DIsplayBanner/DisplayBanner';
 function Login() {
   const navigate = useNavigate();
   // const first_name = jwtDecode(loginResponse.userToken).first_name;
   const [showSpin, setShowSpin] = useState(false);
-
   const onSubmit = async (values) => {
     setShowSpin(true);
     try {
-
       const loginResponse = await LoginApi(values);
 
       if (loginResponse.errCode !== 0) {
         setTimeout(() => {
           setShowSpin(false);
         }, [2500]);
-        message.error('Invalid email or password');
         return message.info(loginResponse.message);
       } else {
         // userRol to determine RBAC
@@ -55,68 +52,90 @@ function Login() {
     return;
   };
 
+  const facebook_url =  process.env.REACT_APP_FACEBOOK_URL ;
+  const instagram_url =  process.env.REACT_APP_INSTAGRAM_URL ;
+
   return (
     <div id="login">
       <SpinOverLay showSpin={showSpin} />
-      <div className="login_announcement">
-        <h3>{process.env.REACT_APP_NAME}Distribution System</h3>
-      </div>
-      <div className="login_box">
-        <Form
-          name="basic"
-          initialValues={{ remember: true }}
-          onFinish={onSubmit}
-          autoComplete="off"
-        >
-          <Form.Item
-            label="Email"
-            name="email"
-            rules={[
-              {
-                required: true,
-                message: 'Please input your email',
-              },
-            ]}
+      <div className="login-page-info">
+        <div className="login_announcement">
+          <h3>{process.env.REACT_APP_NAME} Distribution System</h3>
+        </div>
+        <div className="login_box">
+          <Form
+            name="basic"
+            initialValues={{ remember: true }}
+            onFinish={onSubmit}
+            autoComplete="off"
           >
-            <Input />
-          </Form.Item>
-          <Form.Item
-            label="Password"
-            name="password"
-            rules={[
-              {
-                required: true,
-                message: 'Please input your password!',
-              },
-            ]}
-          >
-            <Input.Password />
-          </Form.Item>
-          <Form.Item>
+            <Form.Item
+              label="Email"
+              name="email"
+              rules={[
+                {
+                  required: true,
+                  message: 'Please input your email',
+                },
+              ]}
+            >
+              <Input />
+            </Form.Item>
+            <Form.Item
+              label="Password"
+              name="password"
+              rules={[
+                {
+                  required: true,
+                  message: 'Please input your password!',
+                },
+              ]}
+            >
+              <Input.Password />
+            </Form.Item>
+            <Form.Item>
+              <Button type="primary" htmlType="submit" block>
+                Login
+              </Button>
+            </Form.Item>
             <Button
               type="link"
               htmlType="button"
               onClick={retrieveAccount}
             >
-              Forget Password
+              Forget Password?
             </Button>
-            <Button type="primary" htmlType="submit" block>
-              Login
-            </Button>
-          </Form.Item>
-        </Form>
-        <p>by {process.env.REACT_APP_COMPANY_NAME}</p>
+          </Form>
+          {/* Footer content */}
+          <p>
+            © {new Date().getFullYear()}{' '}
+            {process.env.REACT_APP_COMPANY_NAME}. All rights reserved.
+          </p>
+          <div className="footer-links">
+            <a href="/terms-of-service">Terms of Service</a> |
+            <a href="/privacy-policy">Privacy Policy</a> |
+            <a href="/support">Support</a>
+          </div>
+        </div>
+        <div className="social-links">
+          <a
+            href={facebook_url}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Facebook
+          </a>
+          <a
+            href={instagram_url}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Instagram
+          </a>
+        </div>
       </div>
-      <div className="login_banner">
-        <p>
-          <strong>Admin:</strong> admin@demo.com
-        </p>
-        <p>
-          <strong>Client:</strong>client@demo.com
-        </p>
-        <p>
-          <strong>Default password:</strong>12345678
-        </p>
+      <div className="login-page-image login_banner">
+        <DisplayBanner />
       </div>
     </div>
   );

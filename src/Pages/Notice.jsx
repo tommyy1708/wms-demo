@@ -47,7 +47,11 @@ const Notice = () => {
         please keep input empty then submit
         <br />
       </h6>
-      <Form form={form} onFinish={onFinish} initialValues={{ content: announcement }}>
+      <Form
+        form={form}
+        onFinish={onFinish}
+        initialValues={{ content: announcement }}
+      >
         <Form.Item name="content" label="Content">
           <Input.TextArea
             rows={4}

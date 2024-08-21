@@ -8,7 +8,7 @@ const instance = axios.create({
 
 //add request interceptor
 instance.interceptors.request.use(
- config => {
+  (config) => {
     const token = localStorage.getItem('token');
     if (token) {
       config.headers['Authorization'] = `Bearer ${token}`;
@@ -19,8 +19,8 @@ instance.interceptors.request.use(
     //action for request error
     console.error(error);
 
-Promise.reject(error);
-    return ;
+    Promise.reject(error);
+    return;
   }
 );
 
@@ -29,10 +29,8 @@ instance.interceptors.response.use(
   function (response) {
     try {
       if (!response) {
-
         return response.message;
       } else {
-
         return response.data;
       }
     } catch (error) {
@@ -42,7 +40,7 @@ instance.interceptors.response.use(
   function (error) {
     //action for response error
     // Promise.reject(error);
-    return ;
+    return;
   }
 );
 

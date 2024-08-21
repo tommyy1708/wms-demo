@@ -1,10 +1,6 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import {
-  Table,
-  Button,
-  message,
-} from 'antd';
+import { Table, Button, message, Row, Col, Image } from 'antd';
 import { GetCategoryList } from '../../request/api';
 import {
   PlusCircleTwoTone,
@@ -18,11 +14,13 @@ const Listing = () => {
   const [itemsData, setItemsData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [flag, setFlag] = useState(true);
+  const [productImageUrl, setProductImageUrl] = useState('');
+  const [colorGuideImageUrl, setColorGuideImageUrl] = useState('');
   const navigate = useNavigate();
 
-    const goBack = () => {
-      navigate(-1); // Navigates back to the previous page
-    };
+  const goBack = () => {
+    navigate(-1); // Navigates back to the previous page
+  };
 
   const params = useParams();
 
@@ -33,10 +31,11 @@ const Listing = () => {
       return message.error(categoryList.message);
     } else {
       let data = categoryList.data;
-      const filteredData = data.filter(item => item.stock > 0);
-
+      let categoryData = categoryList.categoryData;
+      const filteredData = data.filter((item) => item.stock > 0);
       setItemsData(filteredData);
-
+      setProductImageUrl(categoryData[0].productImage);
+      setColorGuideImageUrl(categoryData[0].colorGuideImage);
       setTimeout(() => {
         setLoading(false);
       }, 1000);
@@ -60,7 +59,7 @@ const Listing = () => {
       fetchCategoryList();
       setFlag(false);
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [flag]);
 
   const columns = [
@@ -108,13 +107,13 @@ const Listing = () => {
         <span className={`${styles.buttonsFrame}`}>
           <span>
             <MinusCircleTwoTone
-              style={{ fontSize: '55rem', color: '#08c' }}
+              style={{ fontSize: '2.5rem', color: '#08c' }}
               onClick={() => ctx.subItemToCart(record)}
             />
           </span>
           <span>
             <PlusCircleTwoTone
-              style={{ fontSize: '55rem', color: '#08c' }}
+              style={{ fontSize: '2.5rem', color: '#08c' }}
               onClick={() => ctx.addItemToCart(record)}
             />
           </span>
@@ -123,14 +122,23 @@ const Listing = () => {
     },
   ];
 
-
   return (
     <div className={styles.listingFrame}>
       <div className="inquiry_table">
         <Table
           title={() => (
-            <div className={styles.tableHeader}>
-              <Button onClick={goBack}>Back</Button>
+            <div className={styles.imageContainer}>
+              <Col className={styles.imageWrapper} span={8}>
+                <Button onClick={goBack}>Back</Button>
+              </Col>
+              <Col className={styles.imageWrapper} span={8}>
+                <h5>Products</h5>
+                <Image src={productImageUrl} alt="Product" />
+              </Col>
+              <Col className={styles.imageWrapper} span={8}>
+                <h5>Color Guide</h5>
+                <Image src={colorGuideImageUrl} alt="Color Guide" />
+              </Col>
             </div>
           )}
           footer={() => <Button onClick={goBack}>Back</Button>}

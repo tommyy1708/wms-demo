@@ -145,7 +145,7 @@ const AddNewCategory = () => {
 
   return (
     <div className="adminSubWindow">
-      <p style={{ color: 'red', fontSize: '10rem' }}>
+      <p style={{ color: 'red', fontSize: '1.5rem' }}>
         (Demo version disabled upload function)
       </p>
       <Form form={form} onFinish={handleSubmit} layout="horizontal">
