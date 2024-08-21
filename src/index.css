@@ -246,6 +246,36 @@ footer {
   width: 100%;
 }
 
+.demoAccounts {
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: #f9f9f9;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
+}
+
+.demoAccounts h4 {
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+  color: #333;
+}
+
+.demoAccounts ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.demoAccounts li {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  color: #555;
+}
+
+.demoAccounts strong {
+  color: #333;
+}
+
+
 /* Responsive styles */
 @media (min-width: 768px) {
   #login {
@@ -344,3 +374,4 @@ a:hover {
   text-decoration: underline;
 }
 /* End Terms, Policy, Support */
+
