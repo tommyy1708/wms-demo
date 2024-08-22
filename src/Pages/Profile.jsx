@@ -112,7 +112,11 @@ const Profile = () => {
             <Input placeholder={ctx.userInfo.shipping_address} />
           </Form.Item>
           <Form.Item>
-            <Button type="primary" htmlType="submit">
+            <Button
+              type="primary"
+              htmlType="submit"
+              style={{ justifyContent: 'center' }}
+            >
               Update
             </Button>
           </Form.Item>

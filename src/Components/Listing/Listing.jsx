@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { Table, Button, message, Row, Col, Image } from 'antd';
+import { Table, Button, message, Col, Image } from 'antd';
 import { GetCategoryList } from '../../request/api';
 import {
   PlusCircleTwoTone,
