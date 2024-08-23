@@ -50,59 +50,58 @@ const AdminSendMessage = () => {
   };
 
   return (
-    <Form form={form} layout="vertical" onFinish={onFinish}>
-      <Form.Item
-        name="receiver_ids"
-        label="Select Users"
-        rules={[
-          {
-            required: true,
-            message: 'Please select at least one user',
-          },
-        ]}
-      >
-        <Select mode="multiple" placeholder="Select users" allowClear>
-          {users.map((user) => (
-            <Option
-              key={user.id}
-              value={user.id}
-            >
-              {user.first_name} {user.last_name}
-            </Option>
-          ))}
-        </Select>
-      </Form.Item>
-      <Form.Item
-        name="content"
-        label="Message To Admin"
-        rules={[
-          {
-            required: true,
-            type: 'string',
-            min: 10,
-            max: 450,
-            message: 'Content must be between 10 and 450 characters',
-          },
-        ]}
-      >
-        <Input.TextArea
-          autoSize={{
-            minRows: 8,
-            maxRows: 15,
-          }}
-        />
-      </Form.Item>
-      <Form.Item>
-        <Button type="primary" htmlType="submit" loading={loading}>
-          Send Message
-        </Button>
-      </Form.Item>
-      {/* <Form.Item>
-        <Button type="primary" htmlType="submit">
-          Send Message
-        </Button>
-      </Form.Item> */}
-    </Form>
+    <div className="admin-sent-message-frame">
+      <Form form={form} layout="vertical" onFinish={onFinish}>
+        <Form.Item
+          name="receiver_ids"
+          label="Select Users"
+          rules={[
+            {
+              required: true,
+              message: 'Please select at least one user',
+            },
+          ]}
+        >
+          <Select
+            mode="multiple"
+            placeholder="Select users"
+            allowClear
+          >
+            {users.map((user) => (
+              <Option key={user.id} value={user.id}>
+                {user.first_name} {user.last_name}
+              </Option>
+            ))}
+          </Select>
+        </Form.Item>
+        <Form.Item
+          name="content"
+          label="Message To Admin"
+          rules={[
+            {
+              required: true,
+              type: 'string',
+              min: 10,
+              max: 450,
+              message:
+                'Content must be between 10 and 450 characters',
+            },
+          ]}
+        >
+          <Input.TextArea
+            autoSize={{
+              minRows: 8,
+              maxRows: 15,
+            }}
+          />
+        </Form.Item>
+        <Form.Item>
+          <Button type="primary" htmlType="submit" loading={loading}>
+            Send Message
+          </Button>
+        </Form.Item>
+      </Form>
+    </div>
   );
 };
 

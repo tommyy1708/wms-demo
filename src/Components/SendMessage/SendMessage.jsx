@@ -16,7 +16,6 @@ const SendMessage = () => {
 
 
   const onFinish = async (values) => {
-    // setShowSpin(true);
     const userInfo = {
       sender_id: localStorage.getItem('userId'),
       content: values.content,
