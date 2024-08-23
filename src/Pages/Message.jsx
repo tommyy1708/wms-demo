@@ -37,7 +37,7 @@ const SendMessageForm = () => {
 
   return (
     <div className="admin-window">
-      <div>
+      <div className="message-frame">
         <Menu
           onClick={onClick}
           selectedKeys={[current]}

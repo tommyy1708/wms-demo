@@ -23,7 +23,7 @@ const SendMessage = () => {
 
     const response = await SendNewMessage(userInfo);
 
-    console.log(response);
+  
 
     if (response.errCode !== 0) {
       setShowSpin(false);
@@ -52,7 +52,7 @@ const SendMessage = () => {
 
 
   return (
-    <div style={{ padding: '30rem', margin: '0' }}>
+    <div className="send-message-frame">
       <SpinOverLay showSpin={showSpin}></SpinOverLay>
       <Form form={form} onFinish={onFinish}>
         <Form.Item

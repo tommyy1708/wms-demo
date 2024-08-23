@@ -111,15 +111,12 @@ const Profile = () => {
           <Form.Item label="Shipping Address" name="shipping_address">
             <Input placeholder={ctx.userInfo.shipping_address} />
           </Form.Item>
-          <Form.Item>
             <Button
               type="primary"
               htmlType="submit"
-              style={{ justifyContent: 'center' }}
             >
               Update
             </Button>
-          </Form.Item>
         </Form>
       )}
     </div>
