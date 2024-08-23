@@ -378,3 +378,21 @@ a:hover {
 .footerNavMenu svg{
   color:#fff;
 }
+
+
+.adminSubWindow{
+  padding: 1.25rem;
+}
+
+
+.send-message-frame{
+  max-width: 500px;
+  padding: 1.25rem;
+}
+.send-message-frame button{
+  width: 100%;
+}
+
+.admin-sent-message-frame{
+  padding: 1.25rem;
+}
