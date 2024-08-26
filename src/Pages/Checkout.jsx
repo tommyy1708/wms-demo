@@ -136,13 +136,13 @@ const Checkout = () => {
         <span className='buttonsFrame'>
           <span className="checkout-buttonsFrame">
             <MinusCircleTwoTone
-              style={{ fontSize: '55rem', color: '#08c' }}
+              style={{ fontSize: '2.5rem', color: '#08c' }}
               onClick={() => ctx.subItemToCart(record)}
             />
           </span>
           <span>
             <PlusCircleTwoTone
-              style={{ fontSize: '55rem', color: '#08c' }}
+              style={{ fontSize: '2.5rem', color: '#08c' }}
               onClick={() => ctx.addItemToCart(record)}
             />
           </span>
