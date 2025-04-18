@@ -13,7 +13,8 @@ const NewCustomer = () => {
   });
   // Function to handle form submission
   const handleSubmit = async (data) => {
-   const response = await User(data); 
+    const response = await User(data);
+    console.log('response',response);
     if (response) {
       notification.success({
         message: response.message,

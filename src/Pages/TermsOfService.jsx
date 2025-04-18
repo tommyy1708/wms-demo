@@ -48,7 +48,7 @@ function TermsOfService() {
       <h2>6. Limitation of Liability</h2>
       <p>
         To the fullest extent permitted by law,{' '}
-        <strong>Hair Natural Inc.</strong> shall not be liable for any
+        <strong>Company Name</strong> shall not be liable for any
         indirect, incidental, special, consequential, or punitive
         damages arising from your use of the Website.
       </p>

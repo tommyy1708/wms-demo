@@ -6,8 +6,8 @@ export const LoginApi = (params) =>
 export const GetUserInfo = (params) =>
   request.get('/api/supplier-user', { params });
 
-export const User = (params) =>
-  request.post('/api/supplier-user', { params });
+export const User = (data) =>
+  request.post('/api/supplier-user', { params: data });
 
 export const Category = (params) =>
   request.post('/api/supplier-category', { params });
