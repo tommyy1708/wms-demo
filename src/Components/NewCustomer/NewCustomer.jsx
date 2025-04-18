@@ -13,7 +13,7 @@ const NewCustomer = () => {
   });
   // Function to handle form submission
   const handleSubmit = async (data) => {
-    const response = await User(JSON.stringify(data));
+   const response = await User(data); 
     if (response) {
       notification.success({
         message: response.message,
@@ -25,18 +25,7 @@ const NewCustomer = () => {
     }
     form.resetFields();
   };
-  // const [formLayout, setFormLayout] = useState('horizontal');
-  // const formItemLayout =
-  //   formLayout === 'horizontal'
-  //     ? {
-  //         labelCol: {
-  //           span: 4,
-  //         },
-  //         wrapperCol: {
-  //           span: 14,
-  //         },
-  //       }
-  //     : null;
+
 
   return (
     <div className="adminSubWindow">

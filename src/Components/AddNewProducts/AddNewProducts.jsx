@@ -14,7 +14,7 @@ const AddNewProducts = () => {
   const [categoryList ,setCategoryList] = useState([])
   // Function to handle form submission
   const handleSubmit = async (data) => {
-    const response = await Product(JSON.stringify(data));
+    const response = await Product(data);
     if (response) {
       notification.success({
         message: response.message,

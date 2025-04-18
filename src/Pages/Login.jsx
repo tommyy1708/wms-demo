@@ -13,7 +13,7 @@ function Login() {
     setShowSpin(true);
     try {
       const loginResponse = await LoginApi(values);
-      console.log(loginResponse);
+  
 
       if (loginResponse.errCode !== 0) {
         setTimeout(() => {

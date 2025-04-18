@@ -61,7 +61,7 @@ const Checkout = () => {
   const placeOrder = async () => {
     setShowSpin(true);
     const result = await newOrderSendApi({
-      cartData: JSON.stringify(ctx.cartData),
+      cartData: ctx.cartData,
       userId: localStorage.getItem('userId'),
     });
     if (result.errCode !== 0) {
