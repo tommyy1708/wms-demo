@@ -4,6 +4,7 @@ import axios from 'axios';
 const instance = axios.create({
   baseURL: `${process.env.REACT_APP_SERVER_URL}`,
   timeout: 5000,
+  headers: { 'Content-Type': 'application/json' },
 });
 
 //add request interceptor
@@ -19,28 +20,23 @@ instance.interceptors.request.use(
     //action for request error
     console.error(error);
 
-    Promise.reject(error);
-    return;
+    return Promise.reject(error);
   }
 );
 
 //add response interceptor
 instance.interceptors.response.use(
   function (response) {
-    try {
-      if (!response) {
-        return response.message;
-      } else {
-        return response.data;
-      }
-    } catch (error) {
-      return error;
-    }
+    return response?.data ?? response;
   },
   function (error) {
-    //action for response error
-    // Promise.reject(error);
-    return;
+
+   if (error.response?.status === 401) {
+     localStorage.clear();
+     window.location.replace('/login');
+   }
+   return Promise.reject(error);
+
   }
 );
 

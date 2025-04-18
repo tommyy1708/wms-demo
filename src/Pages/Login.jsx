@@ -7,12 +7,13 @@ import { LoginApi } from '../request/api';
 import DisplayBanner from '../Components/DIsplayBanner/DisplayBanner';
 function Login() {
   const navigate = useNavigate();
-  // const first_name = jwtDecode(loginResponse.userToken).first_name;
+
   const [showSpin, setShowSpin] = useState(false);
   const onSubmit = async (values) => {
     setShowSpin(true);
     try {
       const loginResponse = await LoginApi(values);
+      console.log(loginResponse);
 
       if (loginResponse.errCode !== 0) {
         setTimeout(() => {
@@ -21,26 +22,16 @@ function Login() {
         return message.info(loginResponse.message);
       } else {
         // userRol to determine RBAC
-        const userRol = jwtDecode(loginResponse.userToken).admin;
-        localStorage.setItem(
-          'first_name',
-          jwtDecode(loginResponse.userToken).first_name
-        );
-        localStorage.setItem(
-          'last_name',
-          jwtDecode(loginResponse.userToken).last_name
-        );
-        localStorage.setItem(
-          'userId',
-          jwtDecode(loginResponse.userToken).id
-        );
+
+       const { admin: userRol, id: userId, email } = jwtDecode(
+         loginResponse.userToken
+       );
+       localStorage.setItem('userId', userId);
+       localStorage.setItem('email', email);
+
         localStorage.setItem('token', loginResponse.userToken);
 
-        if (userRol === 1) {
-          navigate(`/admin`);
-        } else {
-          navigate('/home');
-        }
+        navigate(userRol === 1 ? '/admin' : '/home');
       }
     } catch (error) {
       console.log(error.message);
@@ -120,7 +111,6 @@ function Login() {
               </li>
             </ul>
           </div>
-          {/* Footer content */}
           <p>
             © {new Date().getFullYear()}{' '}
             {process.env.REACT_APP_COMPANY_NAME}. All rights reserved.

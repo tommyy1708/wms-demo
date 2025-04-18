@@ -1,81 +1,81 @@
 import request from './request';
 
 export const LoginApi = (params) =>
-  request.post('/supplier-login', params);
+  request.post('/api/supplier-login', params);
 
 export const GetUserInfo = (params) =>
-  request.get('/supplier-user', { params });
+  request.get('/api/supplier-user', { params });
 
 export const User = (params) =>
-  request.post('/supplier-user', { params });
+  request.post('/api/supplier-user', { params });
 
 export const Category = (params) =>
-  request.post('/supplier-category', { params });
+  request.post('/api/supplier-category', { params });
 
 export const PostBanner = (params) =>
-  request.post('/supplier-banner', { params });
+  request.post('/api/supplier-banner', { params });
 
-export const GetBanner = () => request.get('/supplier-get-banner');
+export const GetBanner = () => request.get('/api/supplier-get-banner');
 
 export const CustomerDelete = (id) =>
-  request.delete(`/supplier-user/${id}`);
+  request.delete(`/api/supplier-user/${id}`);
 
 export const Product = (params) =>
-  request.post('/supplier-product', { params });
+  request.post('/api/supplier-product', { params });
 
 export const ProductUpdate = (params) =>
-  request.put('/supplier-product', { params });
+  request.put('/api/supplier-product', { params });
 
 export const ProductDelete = (itemCode) =>
-  request.delete(`/supplier-product/${itemCode}`);
+  request.delete(`/api/supplier-product/${itemCode}`);
 
 export const GetProduct = (params) =>
-  request.get('/supplier-product', { params });
+  request.get('/api/supplier-product', { params });
 
-export const GetUserList = () => request.get('/supplier-user-list');
+export const GetUserList = () => request.get('/api/supplier-user-list');
 
 export const GetOrders = () => {
-  return request.get(`/supplier-orders`);
+  return request.get(`/api/supplier-orders`);
 };
 
-export const GetCategoryApi = () => request.get('/supplier-category');
+export const GetCategoryApi = () => request.get('/api/supplier-category');
 
 export const CategoryUpdate = (params) =>
-  request.put('/supplier-category', { params });
+  request.put('/api/supplier-category', { params });
 
 export const CategoryDelete = (categoryName) =>
-  request.delete(`/supplier-category/${categoryName}`);
+  request.delete(`/api/supplier-category/${categoryName}`);
 
 export const GetCategoryList = (params) =>
-  request.get(`/supplier-category/${params}`);
+  request.get(`/api/supplier-category/${params}`);
 
 export const PasswordUpdate = (params) =>
-  request.put('/passwordUpdate', params);
+  request.put('/api/passwordUpdate', params);
 
 export const UpdateAnnouncement = (content) =>
-  request.post(`/supplier-announcement`, { content });
+  request.post(`/api/supplier-announcement`, { content });
 
 export const DeleteAnnouncement = (content) =>
-  request.post(`/supplier-delete-announcement`, { content });
+  request.post(`/api/supplier-delete-announcement`, { content });
 
 export const GetAnnouncement = () =>
-  request.get(`/supplier-announcement`);
+  request.get(`/api/supplier-announcement`);
 
 export const ChangeAdmin = (params) =>
-  request.put(`/supplier-admin-change`, params);
+  request.put(`/api/supplier-admin-change`, params);
 
 export const ChangePause = (params) =>
-  request.put(`/supplier-pause-change`, params);
+  request.put(`/api/supplier-pause-change`, params);
 
 export const newOrderSendApi = (params) => {
-  return request.post(`/supplier-addNewOrder`, params);
+  return request.post(`/api/supplier-addNewOrder`, params);
 };
 
 export const GetOrdersByDate = (params) =>
-  request.get(`/supplier-ordersbydate`, { params });
+  request.get(`/api/supplier-ordersbydate`, { params });
 
 export const SendVerifyCode = (params) =>
-  request.post(`/password-retrieval`, params);
+  request.post(`/api/password-retrieval`, params);
 
 export const UploadImage = (file) => {
   const formData = new FormData();
@@ -100,29 +100,29 @@ export const UploadCsv = (file) => {
 };
 
 export const UpdateCsv = (fileUrl) =>
-  request.post(`/update-csv`, { fileUrl });
+  request.post(`/api/update-csv`, { fileUrl });
 
 export const ReplyOrder = (params) =>
-  request.put(`/supplier-received`, params);
+  request.put(`/api/supplier-received`, params);
 
 export const SendNewMessage = (params) =>
-  request.post(`/supplier-message`, { params });
+  request.post(`/api/supplier-message`, { params });
 
 export const GetMessages = (params) =>
-  request.get(`/supplier-messages`, { params });
+  request.get(`/api/supplier-messages`, { params });
 
 export const MessageRead = (messageId) =>
-  request.put(`/supplier-messages/read/${messageId}`);
+  request.put(`/api/supplier-messages/read/${messageId}`);
 
 export const SendSelectMessages = (params) =>
-  request.post(`/supplier-select-message`, { params });
+  request.post(`/api/supplier-select-message`, { params });
 
 export const DeleteSelectedMessages = (params) => {
-  request.delete(`/supplier-select-messages`, { data: params });
+  request.delete(`/api/supplier-select-messages`, { data: params });
 };
 
 export const VerifyToken = () =>
-  request.get(`/supplier-verify-token`);
+  request.get(`/api/supplier-verify-token`);
 
 export const TestApi = (params) =>
-  request.get(`/test-api`, { params });
+  request.get(`/api/test-api`, { params });
